@@ -4,6 +4,7 @@ local LrFileUtils = import 'LrFileUtils'
 local LrPhotoInfo = import 'LrPhotoInfo'
 local LrPathUtils = import 'LrPathUtils'
 local LrProgressScope = import 'LrProgressScope'
+local LrSystemInfo = import 'LrSystemInfo'
 local LrTasks = import 'LrTasks'
 local json = require "JSON"
 
@@ -28,6 +29,11 @@ LrTasks.startAsyncTask(function()
   end)
 end)
 
+binName = 'imgsum-i386'
+if LrSystemInfo.is64Bit() then
+  binName = 'imgsum-amd64'
+end
+
 json.strictTypes = true
 
 Deduplicator = {}
@@ -38,10 +44,10 @@ function IndexPhoto(photo)
 
   local imagePath = photo:getRawMetadata("path")
 	if WIN_ENV == true then
-    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), "imgsum.exe" ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
+    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
 		quotedCommand = '"' .. command .. '"'
 	else
-	   command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), "imgsum" ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
+	   command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
      quotedCommand = command
 	end
 
@@ -54,10 +60,10 @@ function FindDuplicates()
   local command
   local quotedCommand
   if WIN_ENV == true then
-    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), "imgsum.exe" ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
+    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
     quotedCommand = '"' .. command .. '"'
   else
-     command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), "imgsum" ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
+     command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
      quotedCommand = command
   end
 
