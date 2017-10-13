@@ -51,9 +51,11 @@ function IndexPhoto(photo)
      quotedCommand = command
 	end
 
-	if LrTasks.execute( quotedCommand ) ~= 0 then
-	   LrDialogs.message( "Execution error: ", "Error while executing imgsum")
-	end
+  if photo:checkPhotoAvailability() then
+    if LrTasks.execute( quotedCommand ) ~= 0 then
+      LrDialogs.message( "Execution error: ", "Error while executing imgsum")
+    end
+  end
 end
 
 function FindDuplicates()
