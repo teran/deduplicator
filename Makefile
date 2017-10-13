@@ -13,6 +13,7 @@ build:
 	$(LUAC) -s -o temp/deduplicator.lrplugin/FindDuplicates.lua temp/deduplicator.lrplugin/FindDuplicates.lua
 	$(LUAC) -s -o temp/deduplicator.lrplugin/JSON.lua temp/deduplicator.lrplugin/JSON.lua
 	cp -rv temp/deduplicator.lrplugin build/
+	cd build && zip -r deduplicator.lrplugin.zip deduplicator.lrplugin
 
 clean:
 	rm -rvf build temp
@@ -20,3 +21,9 @@ clean:
 dependencies:
 	git clone https://github.com/teran/imgsum.git temp/imgsum
 	cd temp/imgsum && make build-macos && make build-windows
+
+sign:
+	gpg --detach-sign --digest-algo SHA512 --no-tty --batch --output build/deduplicator.lrplugin.zip.sig build/deduplicator.lrplugin.zip
+
+verify:
+	gpg --verify build/deduplicator.lrplugin.zip.sig build/deduplicator.lrplugin.zip
