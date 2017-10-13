@@ -12,5 +12,5 @@ return {
           enabledWhen = 'photosAvailable',
         },
 
-        VERSION = { major=1, minor=0, revision=0, build=100000, },
+        VERSION = { major=1, minor=0, revision=0, build=100001, },
 }
