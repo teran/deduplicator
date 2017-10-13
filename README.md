@@ -21,6 +21,6 @@ Image format supported and tested:
 * Epson RAW(`*.erf`)
 * Hasselblad 3FR(`*.3fr`)
 * JPEG
-* Kodak RAW(`*.kdc` - verified on Kodak DC50, DC120. Easyshare Z1015 RAW files doesn't work)
+* Kodak RAW(`*.kdc` - verified on Kodak DC50, DC120. Easyshare Z1015 RAW files are not supported yet)
 * Nikon RAW(`*.nef` - only, `*.nrw` is not supported yet)
 * TIFF
