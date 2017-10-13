@@ -88,7 +88,7 @@ function FindDuplicates()
 end
 
 function Deduplicator.FindDuplicates()
-  local catPhotos = catalog.targetPhotos
+  local catPhotos = catalog:getMultipleSelectedOrAllPhotos()
   local titles = {}
 
   local indexerProgress = LrProgressScope({title="Indexing photos", functionContext = context})
