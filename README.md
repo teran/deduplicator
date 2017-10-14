@@ -9,7 +9,6 @@ File -> Plug-in Manager -> Add -> [Pick deduplicator.lrplugin file]
 
 # Requirements
 
- * x86_64 system, plugin is NOT working on 32-bit systems
  * the latest Adobe Lightroom version. Minimal requirement is CC 2015/6.0
  * Both of macOS and Windows are supported
 
