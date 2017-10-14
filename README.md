@@ -5,7 +5,22 @@ on perceptual hashing algorithms.
 
 # Installation
 
-File -> Plug-in Manager -> Add -> [Pick deduplicator.lrplugin file]
+> File -> Plug-in Manager -> Add -> [Pick deduplicator.lrplugin file]
+
+*NOTE:* Since Adobe Lightroom doesn't copy plug-in files on installation to any safe place, you normally should choose a place your not going to delete plug-in file from.
+Usually for plugins is used `~/Library/Application\ Support/Adobe/Lightroom/Plugins/` or something like that.
+
+# Usage
+
+> Library -> Plug-in Extras -> Find duplicates
+
+The plugin will start to check all the *available* images in your catalog this could take a while.
+
+After the process would be completed the Deduplicator will put all the supposed duplicates to `Duplicates` collection created on top leve of collections tree.
+
+![](https://raw.githubusercontent.com/teran/deduplicator/master/docs/static/images/collections-screenshot.png)
+
+*NOTE:* the plugin takes selection or all photos if <= 1 photo is selected.
 
 # Requirements
 
