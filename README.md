@@ -22,6 +22,11 @@ After the process would be completed the Deduplicator will put all the supposed 
 
 *NOTE:* the plugin takes selection or all photos if <= 1 photo is selected.
 
+# How it works inside
+
+Deduplicator plug-in relies on [imgsum](https://github.com/teran/imgsum) to calculate
+image perceptual hashes.
+
 # Requirements
 
  * the latest Adobe Lightroom version. Minimal requirement is CC 2015/6.0
