@@ -6,7 +6,9 @@ local LrPathUtils = import 'LrPathUtils'
 local LrProgressScope = import 'LrProgressScope'
 local LrSystemInfo = import 'LrSystemInfo'
 local LrTasks = import 'LrTasks'
+
 local json = require "JSON"
+json.strictTypes = true
 
 local duplicatesCollectionName = "Duplicates"
 local imgsumDatabasePath = LrPathUtils.standardizePath(
@@ -33,8 +35,6 @@ binName = 'imgsum-i386'
 if LrSystemInfo.is64Bit() then
   binName = 'imgsum-amd64'
 end
-
-json.strictTypes = true
 
 Deduplicator = {}
 
