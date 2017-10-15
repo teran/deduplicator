@@ -8,14 +8,14 @@ plugin_id = 'me.teran.lightroom.deduplicator'
 plugin_home_url = "https://github.com/teran/deduplicator"
 
 return {
-        LrSdkVersion = 6.0,
-        LrToolkitIdentifier = plugin_id,
-        LrPluginName = plugin_name,
-        LrPluginInfoUrl = plugin_home_url,
-        LrLibraryMenuItems = {
-          title = 'Find duplicates',
-          file = 'FindDuplicates.lua',
-          enabledWhen = 'photosAvailable',
-        },
-        VERSION = { major=plugin_major, minor=plugin_minor, revision=plugin_revision, build=plugin_build, },
+  LrSdkVersion = 6.0,
+  LrToolkitIdentifier = plugin_id,
+  LrPluginName = plugin_name,
+  LrPluginInfoUrl = plugin_home_url,
+  LrLibraryMenuItems = {
+    title = 'Find duplicates',
+    file = 'FindDuplicates.lua',
+    enabledWhen = 'photosAvailable',
+  },
+  VERSION = { major=plugin_major, minor=plugin_minor, revision=plugin_revision, build=plugin_build, },
 }

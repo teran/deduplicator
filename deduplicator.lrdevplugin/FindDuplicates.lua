@@ -39,17 +39,17 @@ json.strictTypes = true
 Deduplicator = {}
 
 function IndexPhoto(photo)
-	local command
-	local quotedCommand
+  local command
+  local quotedCommand
 
   local imagePath = photo:getRawMetadata("path")
-	if WIN_ENV == true then
+  if WIN_ENV == true then
     command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
-		quotedCommand = '"' .. command .. '"'
-	else
-	   command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
-     quotedCommand = command
-	end
+    quotedCommand = '"' .. command .. '"'
+  else
+    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
+    quotedCommand = command
+  end
 
   if photo:checkPhotoAvailability() then
     if LrTasks.execute( quotedCommand ) ~= 0 then
@@ -92,15 +92,15 @@ function Deduplicator.FindDuplicates()
   local titles = {}
 
   local indexerProgress = LrProgressScope({title="Indexing photos", functionContext = context})
-	indexerProgress:setCancelable(true)
+  indexerProgress:setCancelable(true)
   for i, photo in ipairs(catPhotos) do
     if indexerProgress:isCanceled() then
       break;
-		end
+    end
     indexerProgress:setPortionComplete(i, #catPhotos)
     local fileName = photo:getFormattedMetadata("fileName")
     local photoProgress = LrProgressScope({parent = indexerProgress, caption = "Processing " .. fileName})
-		photoProgress:setCaption("Processing " .. fileName)
+    photoProgress:setCaption("Processing " .. fileName)
     IndexPhoto(photo)
   end
   indexerProgress:done()
