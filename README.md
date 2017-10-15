@@ -12,6 +12,8 @@ Usually for plugins is used `~/Library/Application\ Support/Adobe/Lightroom/Plug
 
 # Usage
 
+### Checking for duplicates
+
 > Library -> Plug-in Extras -> Find duplicates
 
 The plugin will start to check all the *available* images in your catalog this could take a while.
@@ -21,6 +23,12 @@ After the process would be completed the Deduplicator will put all the supposed 
 ![](https://raw.githubusercontent.com/teran/deduplicator/master/docs/static/images/collections-screenshot.png)
 
 *NOTE:* the plugin takes selection or all photos if <= 1 photo is selected.
+
+### Semi-automatic updates
+
+> Help -> Plug-in Extras -> Check for updates
+
+This will check GitHub if there's a new release and suggest you to check it out.
 
 # How it works inside
 

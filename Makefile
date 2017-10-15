@@ -14,6 +14,7 @@ build:
 	$(LUAC) -s -o temp/deduplicator.lrplugin/Info.lua temp/deduplicator.lrplugin/Info.lua
 	$(LUAC) -s -o temp/deduplicator.lrplugin/FindDuplicates.lua temp/deduplicator.lrplugin/FindDuplicates.lua
 	$(LUAC) -s -o temp/deduplicator.lrplugin/JSON.lua temp/deduplicator.lrplugin/JSON.lua
+	$(LUAC) -s -o temp/deduplicator.lrplugin/GithubCheckUpdates.lua temp/deduplicator.lrplugin/GithubCheckUpdates.lua
 	cp -rv temp/deduplicator.lrplugin build/
 	cd build && zip -r deduplicator.lrplugin.zip deduplicator.lrplugin
 
