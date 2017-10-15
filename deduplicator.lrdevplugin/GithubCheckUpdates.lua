@@ -21,6 +21,8 @@ function checkForUpdates()
     if referToNewRelease == 'ok' then
       LrHttp.openUrlInBrowser(r['html_url'])
     end
+  else
+    LrDialogs.message('Deduplicator is up-to-date!', 'Keep it going!')
   end
 end
 
