@@ -73,17 +73,19 @@ function FindDuplicates()
   local s = assert(f:read('*a'))
   f:close()
 
-  local imgsum_output = json:decode(s)
+  if s ~= "" then
+    local imgsum_output = json:decode(s)
 
-  if imgsum_output["duplicates"] ~= nil then
-    catalog:withWriteAccessDo("Create collection", function()
-      for _, photo in pairs(imgsum_output["duplicates"]) do
-        for _, file in pairs(photo) do
-          p = catalog:findPhotoByPath(file)
-          collection:addPhotos({p})
+    if imgsum_output["duplicates"] ~= nil then
+      catalog:withWriteAccessDo("Create collection", function()
+        for _, photo in pairs(imgsum_output["duplicates"]) do
+          for _, file in pairs(photo) do
+            p = catalog:findPhotoByPath(file)
+            collection:addPhotos({p})
+          end
         end
-      end
-    end)
+      end)
+    end
   end
 end
 
