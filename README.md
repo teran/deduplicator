@@ -50,4 +50,5 @@ Image format supported and tested:
 * JPEG
 * Kodak RAW(`*.kdc` - verified on Kodak DC50, DC120. Easyshare Z1015 RAW files are not supported yet)
 * Nikon RAW(`*.nef` - only, `*.nrw` is not supported yet)
+* Sony RAW(`*.arw`, `*.sr2` - experimental support)
 * TIFF
