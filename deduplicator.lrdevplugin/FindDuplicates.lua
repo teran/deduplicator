@@ -99,10 +99,10 @@ function Deduplicator.FindDuplicates()
     if indexerProgress:isCanceled() then
       break;
     end
-    indexerProgress:setPortionComplete(i, #catPhotos)
     local fileName = photo:getFormattedMetadata("fileName")
-    local photoProgress = LrProgressScope({parent = indexerProgress, caption = "Processing " .. fileName})
-    photoProgress:setCaption("Processing " .. fileName)
+
+    indexerProgress:setPortionComplete(i, #catPhotos)
+    indexerProgress:setCaption("Processing " .. fileName)
     IndexPhoto(photo)
   end
   indexerProgress:done()
