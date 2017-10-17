@@ -61,6 +61,7 @@ end
 function FindDuplicates()
   local command
   local quotedCommand
+
   if WIN_ENV == true then
     command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
     quotedCommand = '"' .. command .. '"'
@@ -92,19 +93,24 @@ end
 function Deduplicator.FindDuplicates()
   local catPhotos = catalog:getMultipleSelectedOrAllPhotos()
   local titles = {}
+  local indexerProgress = LrProgressScope({
+    title="Indexing photos...", functionContext = context})
 
-  local indexerProgress = LrProgressScope({title="Indexing photos", functionContext = context})
   indexerProgress:setCancelable(true)
+
   for i, photo in ipairs(catPhotos) do
     if indexerProgress:isCanceled() then
       break;
     end
+
     local fileName = photo:getFormattedMetadata("fileName")
 
     indexerProgress:setPortionComplete(i, #catPhotos)
     indexerProgress:setCaption("Processing " .. fileName)
+
     IndexPhoto(photo)
   end
+
   indexerProgress:done()
 
   FindDuplicates()
