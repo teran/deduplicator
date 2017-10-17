@@ -53,7 +53,7 @@ function IndexPhoto(photo)
 
   if photo:checkPhotoAvailability() then
     if LrTasks.execute( quotedCommand ) ~= 0 then
-      LrDialogs.message( "Execution error: ", "Error while executing imgsum")
+      LrDialogs.message( "Subcommand execution error", "Error while executing imgsum")
     end
   end
 end
