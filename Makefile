@@ -11,10 +11,7 @@ build:
 	cp -v temp/imgsum/bin/imgsum-darwin-i386 temp/deduplicator.lrplugin/mac/imgsum-i386
 	cp -v temp/imgsum/bin/imgsum-windows-amd64.exe temp/deduplicator.lrplugin/win/imgsum-amd64.exe
 	cp -v temp/imgsum/bin/imgsum-windows-i386.exe temp/deduplicator.lrplugin/win/imgsum-i386.exe
-	$(LUAC) -s -o temp/deduplicator.lrplugin/Info.lua temp/deduplicator.lrplugin/Info.lua
-	$(LUAC) -s -o temp/deduplicator.lrplugin/FindDuplicates.lua temp/deduplicator.lrplugin/FindDuplicates.lua
-	$(LUAC) -s -o temp/deduplicator.lrplugin/JSON.lua temp/deduplicator.lrplugin/JSON.lua
-	$(LUAC) -s -o temp/deduplicator.lrplugin/GithubCheckUpdates.lua temp/deduplicator.lrplugin/GithubCheckUpdates.lua
+	for file in `ls -1 temp/deduplicator.lrplugin/*.lua`; do $(LUAC) -s -o $$file $$file ; done
 	cp -rv temp/deduplicator.lrplugin build/
 	cd build && zip -r deduplicator.lrplugin.zip deduplicator.lrplugin
 
