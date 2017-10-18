@@ -48,7 +48,8 @@ Image format supported and tested:
 * Epson RAW(`*.erf`)
 * Hasselblad 3FR(`*.3fr`)
 * JPEG
-* Kodak RAW(`*.kdc` - verified on Kodak DC50, DC120. Easyshare Z1015 RAW files are not supported yet)
+* Kodak RAW(`*.kdc` - verified on Kodak DC50, DC120. Easyshare Z1015 RAW files doesn't work)
+* Leaf RAW(`*.mos` - verified on Aptus 22, Aptus 75 doesn't work)
 * Nikon RAW(`*.nef` - only, `*.nrw` is not supported yet)
-* Sony RAW(`*.arw`, `*.sr2` - experimental support)
 * TIFF
+* Sony RAW(`*.arw`, `*.sr2`) - Experimental at the moment
