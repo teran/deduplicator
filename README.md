@@ -1,13 +1,13 @@
 # Deduplicator
 
-Deduplicator is a Adobe Lightroom plug-in to deduplicate photos in catalog based
+Deduplicator is a Adobe Lightroom Classic CC plug-in to deduplicate photos in catalog based
 on perceptual hashing algorithms.
 
 # Installation
 
 > File -> Plug-in Manager -> Add -> [Pick deduplicator.lrplugin file]
 
-*NOTE:* Since Adobe Lightroom doesn't copy plug-in files on installation to any safe place, you normally should choose a place your not going to delete plug-in file from.
+*NOTE:* Since Adobe Lightroom Classic CC doesn't copy plug-in files on installation to any safe place, you normally should choose a place your not going to delete plug-in file from.
 Usually for plugins is used `~/Library/Application\ Support/Adobe/Lightroom/Plugins/` or something like that.
 
 # Usage
@@ -37,7 +37,7 @@ image perceptual hashes.
 
 # Requirements
 
- * the latest Adobe Lightroom version. Minimal requirement is CC 2015/6.0
+ * the latest Adobe Lightroom Classic CC version. Minimal requirement is Adobe Lightroom CC 2015/6.0
  * Both of macOS and Windows are supported
 
 # NOTES
