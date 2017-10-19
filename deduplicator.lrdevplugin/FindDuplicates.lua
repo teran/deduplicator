@@ -98,6 +98,8 @@ function Deduplicator.FindDuplicates()
 
   indexerProgress:setCancelable(true)
 
+  LrDialogs.showBezel("Starting indexing...")
+
   for i, photo in ipairs(catPhotos) do
     if indexerProgress:isCanceled() then
       break;
