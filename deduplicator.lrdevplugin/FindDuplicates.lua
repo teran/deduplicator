@@ -1,13 +1,12 @@
 local LrApplication = import 'LrApplication'
 local LrDialogs = import 'LrDialogs'
 local LrFileUtils = import 'LrFileUtils'
-local LrPhotoInfo = import 'LrPhotoInfo'
+local LrLogger = import 'LrLogger'
 local LrPathUtils = import 'LrPathUtils'
+local LrPhotoInfo = import 'LrPhotoInfo'
 local LrProgressScope = import 'LrProgressScope'
 local LrSystemInfo = import 'LrSystemInfo'
 local LrTasks = import 'LrTasks'
-local LrLogger = import 'LrLogger'
-local LrSystemInfo = import 'LrSystemInfo'
 
 local logger = LrLogger('Deduplicator')
 logger:enable('logfile')

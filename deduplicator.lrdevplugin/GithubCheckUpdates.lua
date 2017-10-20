@@ -1,5 +1,5 @@
-local LrHttp = import 'LrHttp'
 local LrDialogs = import 'LrDialogs'
+local LrHttp = import 'LrHttp'
 local LrTasks = import 'LrTasks'
 
 local json = require 'JSON'
