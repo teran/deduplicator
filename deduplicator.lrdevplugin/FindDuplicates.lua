@@ -8,14 +8,18 @@ local LrProgressScope = import 'LrProgressScope'
 local LrSystemInfo = import 'LrSystemInfo'
 local LrTasks = import 'LrTasks'
 
+local json = require "JSON"
+
+require 'Info'
+
 local logger = LrLogger('Deduplicator')
 logger:enable('logfile')
 
+json.strictTypes = true
+
 logger:trace('FindDuplicates.lua invoked')
 logger:infof('summaryString: %s', LrSystemInfo.summaryString())
-
-local json = require "JSON"
-json.strictTypes = true
+logger:infof('Deduplicator version is %s', plugin_version)
 
 local duplicatesCollectionName = "Duplicates"
 local imgsumDatabasePath = LrPathUtils.standardizePath(
