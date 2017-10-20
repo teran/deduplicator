@@ -53,3 +53,11 @@ Image format supported and tested:
 * Nikon RAW(`*.nef` - only, `*.nrw` is not supported yet)
 * TIFF
 * Sony RAW(`*.arw`, `*.sr2`) - Experimental at the moment
+
+# Contributing
+
+Feel free to create a pull request via GitHub interface ;)
+
+# Bugs reporting
+
+Please feel free to create a [GitHub issue](https://github.com/teran/deduplicator/issues/new)
