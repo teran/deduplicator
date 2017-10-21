@@ -47,8 +47,6 @@ if LrSystemInfo.is64Bit() then
   binName = 'imgsum-amd64'
 end
 
-Deduplicator = {}
-
 function IndexPhoto(photo)
   logger:trace('IndexPhoto() invoked')
   local command
@@ -115,8 +113,8 @@ function FindDuplicates()
   end
 end
 
-function Deduplicator.FindDuplicates()
-  logger:trace('Deduplicator.FindDuplicates() invoked')
+function StartIndexing()
+  logger:trace('StartIndexing() invoked')
   local catPhotos = catalog:getMultipleSelectedOrAllPhotos()
   local titles = {}
   local indexerProgress = LrProgressScope({
@@ -148,4 +146,4 @@ function Deduplicator.FindDuplicates()
   FindDuplicates()
 end
 
-LrTasks.startAsyncTask(Deduplicator.FindDuplicates)
+LrTasks.startAsyncTask(StartIndexing)
