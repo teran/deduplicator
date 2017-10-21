@@ -48,7 +48,7 @@ if LrSystemInfo.is64Bit() then
 end
 
 function IndexPhoto(photo)
-  logger:trace('IndexPhoto() invoked')
+  logger:tracef('IndexPhoto(photo=%s) invoked', photo)
   local command
   local quotedCommand
 
