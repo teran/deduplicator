@@ -100,8 +100,12 @@ function FindDuplicates()
           for _, file in pairs(photo) do
             logger:infof('Preparing query to Lightroom about %s', file)
             p = catalog:findPhotoByPath(file)
-            logger:infof('Preparing to add photo id=%s to collection id=%s', p.localIdentifier, collection.localIdentifier)
-            collection:addPhotos({p})
+            if p ~= nil then
+              logger:infof('Preparing to add photo id=%s to collection id=%s', p.localIdentifier, collection.localIdentifier)
+              collection:addPhotos({p})
+            else
+              logger:warnf('nil result returned on attempt to resolve photo by path %s', file)
+            end
           end
         end
       end)
