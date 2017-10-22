@@ -6,8 +6,8 @@ plugin_build = 100009
 plugin_version = plugin_major .. '.' .. plugin_minor .. '.' .. plugin_revision .. '.' .. plugin_build
 plugin_id = 'me.teran.lightroom.deduplicator'
 plugin_home_url = "https://github.com/teran/deduplicator"
-latestReleaseJsonUrl = 'https://api.github.com/repos/teran/deduplicator/releases/latest'
-logTarget = 'logfile'
+latest_release_json_url = 'https://api.github.com/repos/teran/deduplicator/releases/latest'
+log_target = 'logfile'
 
 return {
   LrSdkVersion = 6.0,

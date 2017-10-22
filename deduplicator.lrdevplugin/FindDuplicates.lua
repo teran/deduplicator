@@ -13,7 +13,7 @@ local json = require "JSON"
 require 'Info'
 
 local logger = LrLogger(plugin_name)
-logger:enable(logTarget)
+logger:enable(log_target)
 
 json.strictTypes = true
 

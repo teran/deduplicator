@@ -9,13 +9,13 @@ json.strictTypes = true
 require 'Info'
 
 local logger = LrLogger(plugin_name)
-logger:enable(logTarget)
+logger:enable(log_target)
 
 logger:trace('GithubCheckUpdates.lua invoked')
 
 function checkForUpdates()
-  logger:debugf('Preparing to request %s', latestReleaseJsonUrl)
-  local responseBody, headers = LrHttp.get(latestReleaseJsonUrl)
+  logger:debugf('Preparing to request %s', latest_release_json_url)
+  local responseBody, headers = LrHttp.get(latest_release_json_url)
   r = json:decode(responseBody)
   logger:infof('Received latest available version as %s', r['tag_name'])
   if r['tag_name'] ~= plugin_version then
