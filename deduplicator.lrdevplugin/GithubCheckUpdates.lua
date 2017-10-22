@@ -8,8 +8,8 @@ json.strictTypes = true
 
 require 'Info'
 
-local logger = LrLogger('Deduplicator')
-logger:enable('logfile')
+local logger = LrLogger(plugin_name)
+logger:enable(logTarget)
 
 logger:trace('GithubCheckUpdates.lua invoked')
 

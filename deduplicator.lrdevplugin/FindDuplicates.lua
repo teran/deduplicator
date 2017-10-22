@@ -12,8 +12,8 @@ local json = require "JSON"
 
 require 'Info'
 
-local logger = LrLogger('Deduplicator')
-logger:enable('logfile')
+local logger = LrLogger(plugin_name)
+logger:enable(logTarget)
 
 json.strictTypes = true
 
