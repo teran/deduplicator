@@ -1,3 +1,12 @@
+--[[----------------------------------------------------------------------------
+
+This file is a part of Deduplicator Lightroom Classic CC plugin
+Licenced under GPLv2 terms
+GIT Repository with the code:
+  https://github.com/teran/deduplicator
+
+------------------------------------------------------------------------------]]
+
 local LrDialogs = import 'LrDialogs'
 local LrHttp = import 'LrHttp'
 local LrLogger = import 'LrLogger'

@@ -1,3 +1,12 @@
+--[[----------------------------------------------------------------------------
+
+This file is a part of Deduplicator Lightroom Classic CC plugin
+Licenced under GPLv2 terms
+GIT Repository with the code:
+  https://github.com/teran/deduplicator
+
+------------------------------------------------------------------------------]]
+
 plugin_name = LOC "$$$/PluginInfo/Name=Deduplicator"
 plugin_major = 1
 plugin_minor = 0
