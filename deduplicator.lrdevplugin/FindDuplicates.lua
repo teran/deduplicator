@@ -62,10 +62,16 @@ function IndexPhoto(photo)
 
   local imagePath = photo:getRawMetadata("path")
   if WIN_ENV == true then
-    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
+    command = string.format('"%s" "%s" >> %s',
+      LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ),
+      imagePath,
+      imgsumDatabasePath)
     quotedCommand = '"' .. command .. '"'
   else
-    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" ' .. '"' .. imagePath .. '" >>' .. imgsumDatabasePath
+    command = string.format('"%s" "%s" >> %s',
+      LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ),
+      imagePath,
+      imgsumDatabasePath)
     quotedCommand = command
   end
 
@@ -86,10 +92,14 @@ function FindDuplicates()
   local quotedCommand
 
   if WIN_ENV == true then
-    command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
+    command = string.format('"%s" -json-output -find-duplicates %s',
+      LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ),
+      imgsumDatabasePath)
     quotedCommand = '"' .. command .. '"'
   else
-     command = '"' .. LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ) .. '" -json-output -find-duplicates ' .. imgsumDatabasePath
+    command = string.format('"%s" -json-output -find-duplicates %s',
+      LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "mac" ), binName ),
+      imgsumDatabasePath)
      quotedCommand = command
   end
 
