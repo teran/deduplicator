@@ -146,7 +146,8 @@ function StartIndexing()
     logger:debugf('Processing file %s', fileName)
 
     indexerProgress:setPortionComplete(i, #catPhotos)
-    indexerProgress:setCaption("Processing " .. fileName)
+    indexerProgress:setCaption(
+      string.format("Processing %s (%s of %s)", fileName, i, #catPhotos))
 
     IndexPhoto(photo)
   end
