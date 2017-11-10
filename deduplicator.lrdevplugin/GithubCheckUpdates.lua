@@ -30,7 +30,9 @@ function checkForUpdates()
   if r['tag_name'] ~= plugin_version then
     local referToNewRelease = LrDialogs.confirm(
       'Update is available!',
-      'Release ' .. r['tag_name'] .. ' is present, wanna visit release page?',
+      string.format(
+        'Release %s is available. You have %s, wanna visit download page?',
+        r['tag_name'], plugin_version),
       'Yes, I want to download an update!',
       'No, thanks.'
     )
