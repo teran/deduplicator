@@ -24,9 +24,15 @@ return {
   LrPluginName = plugin_name,
   LrPluginInfoUrl = plugin_home_url,
   LrLibraryMenuItems = {
-    title = 'Find duplicates',
-    file = 'FindDuplicates.lua',
-    enabledWhen = 'photosAvailable',
+    {
+      title = 'Find duplicates',
+      file = 'FindDuplicates.lua',
+      enabledWhen = 'photosAvailable',
+    },
+    {
+      title = 'Compare on pregenerated imgsum database',
+      file = 'ImportImgsumDatabase.lua',
+    },
   },
   LrHelpMenuItems = {
     title = 'Check for updates',
