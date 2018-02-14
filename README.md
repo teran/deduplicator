@@ -1,4 +1,6 @@
 # Deduplicator
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fteran%2Fdeduplicator.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fteran%2Fdeduplicator?ref=badge_shield)
+
 
 Deduplicator is a Adobe Lightroom Classic CC plug-in to deduplicate photos in catalog based
 on perceptual hashing algorithms.
@@ -61,3 +63,7 @@ Feel free to create a pull request via GitHub interface ;)
 # Bugs reporting
 
 Please feel free to create a [GitHub issue](https://github.com/teran/deduplicator/issues/new)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fteran%2Fdeduplicator.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fteran%2Fdeduplicator?ref=badge_large)
