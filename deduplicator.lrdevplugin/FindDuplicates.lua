@@ -62,7 +62,7 @@ function IndexPhoto(photo)
 
   local imagePath = photo:getRawMetadata("path")
   if WIN_ENV == true then
-    command = string.format('"%s" "%s" >> %s',
+    command = string.format('"%s" "%s" >> "%s"',
       LrPathUtils.child( LrPathUtils.child( _PLUGIN.path, "win" ), binName .. '.exe' ),
       imagePath,
       imgsumDatabasePath)
