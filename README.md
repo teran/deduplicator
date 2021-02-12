@@ -22,7 +22,7 @@ After the process would be completed the Deduplicator will put all the supposed 
 
 ![](https://raw.githubusercontent.com/teran/deduplicator/master/docs/static/images/collections-screenshot.png)
 
-*NOTE:* the plugin takes selection or all photos if <= 1 photo is selected.
+*NOTE:* the plugin takes selection of all photos if <= 1 photo is selected.
 
 ### Semi-automatic updates
 
