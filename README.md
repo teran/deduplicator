@@ -5,6 +5,8 @@ on perceptual hashing algorithms.
 
 # Installation
 
+Download the latest release from [GitHub Releases page](https://github.com/teran/deduplicator/releases) and unzip it.
+
 > File -> Plug-in Manager -> Add -> [Pick deduplicator.lrplugin file]
 
 *NOTE:* Since Adobe Lightroom Classic CC doesn't copy plug-in files on installation to any safe place, you normally should choose a place your not going to delete plug-in file from.
